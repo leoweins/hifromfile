@@ -1,7 +1,7 @@
 pipeline {
     agent any
     triggers {
-        cron('H */4 * * 1-5')
+        cron('* * * * *')
     }
     stages {
         stage('Example') {
@@ -9,5 +9,9 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    }
+       stage('print folder') {
+            steps {
+                sh 'ls -ltr'
+            }
+        }    }
 }
