@@ -7,5 +7,9 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('show files') {
+            steps {
+                sh 'ls -ltr'
+            }
     }
 }
